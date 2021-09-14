@@ -46,14 +46,12 @@
 		    <version>1.3.0</version>
 		</dependency>
 		
-	<!-- socket -->
+	<!-- socket, 채팅 -->
 	<dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-websocket</artifactId>
         <version>${org.springframework-version}</version>
     </dependency>
-
-
 	<dependency>
 		<groupId>org.springframework</groupId>
     	<artifactId>spring-messaging</artifactId>
@@ -63,8 +61,10 @@
 	<dependency>
     	<groupId>org.springframework.integration</groupId>
     	<artifactId>spring-integration-stomp</artifactId>
-    	<version>5.3.2.RELEASE</version>
+    	<version>5.3.2.RELEASE</version>    	
 	</dependency>
+	<!--추가한 부분  -->
+	
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -147,7 +147,46 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>   
+		<!--lombok  -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.12</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!--Database  -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		
+		<!--  java코드 수정시 톰캣 재기동없이 반영하기 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/springloaded -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>springloaded</artifactId>
+		    <version>1.2.8.RELEASE</version>
+		    <scope>provided</scope>
+		</dependency>
+		     
 	</dependencies>
     <build>
         <plugins>
