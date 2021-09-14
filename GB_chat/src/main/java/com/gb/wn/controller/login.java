@@ -30,6 +30,6 @@ public class login {
 		session.setAttribute("name", name);
 		System.out.println(name);
 		//session.invalidate();
-		return "index"; //.do를 여기서 써야 하나? redirect 하는 과정이 필요하다.
+		return "index"; //.do를 여기서 써야 하나? redirect 하는 과정이 필요하다. nono... 일단 해결 완료
 	}
 }
