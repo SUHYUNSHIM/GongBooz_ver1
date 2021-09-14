@@ -26,11 +26,10 @@ public class login {
 //	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String name(@RequestParam("name") String name,
-				HttpSession session) {
+	public String name(@RequestParam("name") String name, HttpSession session) {
 		session.setAttribute("name", name);
 		System.out.println(name);
-		session.invalidate();
-		return "chat";
+		//session.invalidate();
+		return "index"; //.do를 여기서 써야 하나? redirect 하는 과정이 필요하다.
 	}
 }

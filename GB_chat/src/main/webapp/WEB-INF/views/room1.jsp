@@ -8,7 +8,7 @@
 <style>
 .chat-box {
   background: #98C4C7;
-  float: left;
+  float: right;
 }
 
 </style>
