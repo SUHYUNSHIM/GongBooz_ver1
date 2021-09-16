@@ -47,6 +47,7 @@ public class login {
 		//return "index"; //.do를 여기서 써야 하나? redirect 하는 과정이 필요하다. nono... 일단 해결 완료... 아니네 또 안되네.		
 		//ses.invalidate();
 		return "redirect:/"; //멀티스레드 도입해야.아니면 direct 하는데 새로 생성한 session값으로 response를 전달하지 못해서 일 수도 있다. 
-		
+		//https://wickedmagic.tistory.com/131 --> 세션 삭제 참조 블로그 
+		//https://hoing.io/archives/24492 클라우드 오라클 DB 참조 블로그 
 	}
 }
