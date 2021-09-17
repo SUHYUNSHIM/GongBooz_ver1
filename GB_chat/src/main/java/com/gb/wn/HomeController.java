@@ -25,9 +25,7 @@ public class HomeController {
 		
 		String room1 = req.getParameter("room1");
 		System.out.println(room1);
-		//HttpSession session=req.getSession();
-		//session.setAttribute("room1", room1);
-		//ses.removeAttribute("name");
+		
 		model.addAttribute("room1", room1);
 		
 		
