@@ -1,4 +1,4 @@
-package com.suhyun.gb;
+package com.suhyun.controller.chatProcess;
 
 import java.text.DateFormat;
 import java.util.Date;
