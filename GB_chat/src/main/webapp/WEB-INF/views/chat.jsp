@@ -26,7 +26,9 @@ String name = (String)session.getAttribute("name");
 		$('#message').val('')
 	});
 
-	let sock = new SockJS("http://localhost:8081/wn/echo/");
+	let sock = new SockJS("http://00fc-61-75-24-48.ngrok.io/wn/echo"); //http://ngrok주소/wn/echo/  ea35-61-75-24-48.ngrok.io
+	//let sock = new SockJs("http://localhost:20219/wn/echo");
+	//let sock = new SockJf("http://localhost:21092/wn/echo");
 	sock.onmessage = onMessage;
 	sock.onclose = onClose;
 	// 메시지 전송

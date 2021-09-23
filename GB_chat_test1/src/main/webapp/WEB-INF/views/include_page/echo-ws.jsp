@@ -8,6 +8,25 @@
 <title>Home</title>
 </head>
 <body>
+<form id="chatForm">
+        <div class="chat_start_main">
+            상담 CHAT
+        </div>
+        <div class="chat_main" style="display:none;">
+            <div class="modal-header" style="height:20%;">
+                상담 CHAT 
+            </div>
+            <div class="modal-content" id="chat" style="height:60%;">
+                
+            </div>
+            <div class="modal-footer">
+                <input type="text" id="message" class="form-control" style="height:20%;" placeholder="메세지를 입력하세요"/>    
+            </div>
+        </div>
+<!--         <button class="">send</button> -->
+    </form>
+
+
 <script>
 //전역변수 선언-모든 홈페이지에서 사용 할 수 있게 index에 저장
 var socket = null;

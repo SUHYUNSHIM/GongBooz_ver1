@@ -12,8 +12,7 @@ public class WebSocketConfig {
 	@Autowired
 	private EchoHandler echoHandler;
 	
-	@Override
-	public void registerWebSocketHandlers(WebSocketHandlerRegistery registry) {
+	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 		 registry.addHandler(echoHandler, "/echo")  .setAllowedOrigins("*")
 	        .withSockJS()
 	        .setClientLibraryUrl(
