@@ -11,4 +11,5 @@ public class StudyRoom {
 	@Resource(name="StudyRoomService")
 	private StudyService studyService;
 
+	//@RequestMapping(value="/")
 }
