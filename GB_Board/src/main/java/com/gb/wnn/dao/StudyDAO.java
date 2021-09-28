@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 import com.gb.wnn.dbconn.StudyDBConn;
 
 public interface StudyDAO {
-	ArrayList <StudyVO> getAll
+	//ArrayList <StudyVO> getAll
 }
