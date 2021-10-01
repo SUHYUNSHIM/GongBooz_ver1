@@ -3,7 +3,7 @@ package com.gb.wnn.dao;
 import java.util.ArrayList;
 import com.gb.wnn.vo.StudyVO;
 
-//mapper interface 참조
+//mapper interface 참조. dao에 선언한 것은 controller를 도와주기 위해.
 public interface StudyDAO {
 	ArrayList <StudyVO> getAllStudy();
 	void insertStudy(StudyVO studyVO); //스터디 입력
