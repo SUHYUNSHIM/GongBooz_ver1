@@ -22,7 +22,7 @@ import com.gb.wnn.vo.StudyVO;
 /**
  * Handles requests for the application home page.
  */
-@Controller
+//@Controller
 public class HomeController {
 	
 	@Resource(name="studyService")

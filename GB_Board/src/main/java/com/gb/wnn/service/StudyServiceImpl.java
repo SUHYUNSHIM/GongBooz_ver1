@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.gb.wnn.dao.StudyDAO;
 import com.gb.wnn.vo.StudyVO;
-@Service("StudyService")
+//@Service("StudyService")
 public class StudyServiceImpl implements StudyService{
 
 	@Autowired

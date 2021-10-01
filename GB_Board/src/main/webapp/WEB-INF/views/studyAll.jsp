@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>스터디 모집 게시판</h1>
-
+	<!--DB에서 가져와서 실시간 반영. mapper, ajax  -->
 
 </body>
 </html>

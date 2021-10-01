@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h1>스터디 등록하기 </h1>
-	<form action="studyInsert.do" method="post">
+	
 	
 </body>
 </html>

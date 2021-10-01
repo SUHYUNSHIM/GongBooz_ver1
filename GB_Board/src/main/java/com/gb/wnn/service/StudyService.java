@@ -12,13 +12,6 @@ public interface StudyService {
 	StudyVO getStudy(StudyVO studyVO);
 	void updateStudy(StudyVO studyVO);
 	void deleteStudy(StudyVO studyVO);
-	
-	/*public ArrayList <StudyVO> getAllStudyinfo(StudyVO vo1) throws ClassNotFoundException, SQLException; 
-	public StudyVO getStudyinfo (StudyVO vo1) throws ClassNotFoundException, SQLException;
-	public void updateStudyino(StudyVO vo1) throws ClassNotFoundException, SQLException;
-	public void insertStudyinfo(StudyVO vo1) throws ClassNotFoundException, SQLException;
-    public void deleteStudyinfo(StudyVO vo1) throws ClassNotFoundException, SQLException;    */
-    
-    
+	   
    
 }
