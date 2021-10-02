@@ -1,10 +1,10 @@
 package com.gb.wnn.service;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.gb.wnn.dao.StudyDAO;
 import com.gb.wnn.vo.StudyVO;
@@ -16,6 +16,7 @@ public class StudyServiceImpl implements StudyService{
 
 	//등록된 모든 스터디 목록 조회
 	@Override
+	@Transactional
 	public ArrayList<StudyVO> getAllStudy() throws Exception {
 		//dao의 메소드를 찾아간다.
 		return studyroom.getAllStudy();

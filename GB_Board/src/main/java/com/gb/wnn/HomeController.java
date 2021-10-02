@@ -33,7 +33,7 @@ public class HomeController {
 	public String studyAll(Model model) throws Exception{
 		ArrayList <StudyVO> alist = studyService.getAllStudy();
 		model.addAttribute("alist",alist);
-		return "studyAll";
+		return "studyAll"; //studyAll.jsp에서 전부 출력
 	}
 	
 	@RequestMapping(value="/studyInsertForm.do")
@@ -41,26 +41,6 @@ public class HomeController {
 		return "studyInsertForm";
 	}
 	
-	@RequestMapping(value="/studyInsert.do")
-	public String studyInsert(@ModelAttribute("studyVO") StudyVO studyVO, Model model) {
-		studyService.insertStudy(studyVO);
-		return "redirect:/studyAll.do";
-	}
-	@RequestMapping(value="/getStudy.do")
-	public String studyGetinfo(@ModelAttribute("studyVO") StudyVO studyVO, Model model) {
-		studyService.getStudy(studyVO);
-		return "studyGetinfo";
-	}
 	
-	@RequestMapping("/updateStudy.do")
-	public String updateStudy(StudyVO studyVO, Model model) throws ClassNotFoundException, SQLException{
-		studyService.updateStudy(studyVO);
-		return "redirect:/studyAll.do";
-	}
-	@RequestMapping("/deleteStudy.do")
-	public String deleteStudy(StudyVO studyVO, Model model) throws ClassNotFoundException, SQLException{
-		studyService.deleteStudy(studyVO);
-		return "redirect:/studyAll.do";
-	}
 	
 }

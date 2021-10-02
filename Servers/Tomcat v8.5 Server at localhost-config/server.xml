@@ -154,7 +154,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
       <Context docBase="SimpleChat" path="/" reloadable="true" source="org.eclipse.jst.jee.server:SimpleChat"/>
-      <Context docBase="GB_chat_test1" path="/gb" reloadable="true" source="org.eclipse.jst.jee.server:GB_chat_test1"/>
+      
       
       
       <Context docBase="GongBooz" path="/wn" reloadable="true" source="org.eclipse.jst.jee.server:GongBooz"/><Context docBase="gbBoardLogin" path="/sawon" reloadable="true" source="org.eclipse.jst.jee.server:gbBoardLogin"/><Context docBase="GB_Board" path="/wnn" reloadable="true" source="org.eclipse.jst.jee.server:GB_Board"/></Host>
