@@ -16,8 +16,7 @@ import com.gb.wnn.vo.StudyVO;
 public class StudyRoom {
 	
 	//https://min-it.tistory.com/7?category=751930
-	
-	
+		
 	@RequestMapping(value="/new_study")
 	public String studyNew(Model model) {	
 		
