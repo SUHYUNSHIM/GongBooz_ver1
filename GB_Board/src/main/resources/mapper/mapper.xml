@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <!-- mapper interface: dao interface 경로를 namespace로  -->
+<!--mybatis-cofing.xml에서 StudyVO alias 지정  -->
 <mapper namespace="com.gb.wnn.dao.StudyDAO">
 	<!--모든 스터디 목록을 보는 스터디 모집 메인 페이지 화면  -->
 	<select id="getAllStudy" resultType="StudyVO">

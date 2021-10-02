@@ -13,3 +13,4 @@ public interface StudyDAO {
 		
 	void deleteStudy(StudyVO studyVO); //스터디를 삭제한다.
 }
+//+ mybatis는 sqlsession 등 객체가 무조건 중요 
