@@ -25,7 +25,7 @@ import com.gb.wnn.vo.StudyVO;
 @Controller
 public class HomeController {
 	
-	@Resource(name="studyService")
+	@Resource(name="StudyService")
 	private StudyService studyService;
 
 	//전체 스터디 목록 조회
@@ -36,11 +36,10 @@ public class HomeController {
 		return "studyAll"; //studyAll.jsp에서 전부 출력
 	}
 	
+	/*//입력 
 	@RequestMapping(value="/studyInsertForm.do")
 	public String studyInsertForm(@ModelAttribute("studyVO") StudyVO studyVO, Model model) throws Exception{
 		return "studyInsertForm";
-	}
-	
-	
+	}*/	
 	
 }

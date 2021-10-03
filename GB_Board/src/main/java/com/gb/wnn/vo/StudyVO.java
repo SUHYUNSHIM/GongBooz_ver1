@@ -4,17 +4,17 @@ public class StudyVO {
 	private String study_name; //스터디 모임 이름
 	private String study_tag; //스터디 종류 태그
 	private String region; //오프라인 장소
-	private int max_member; //인원 제한수 
+	private int max_number; //인원 제한수 
 	
 	public StudyVO() {};
 	
 	
-	public StudyVO(String study_name, String study_tag, String region, int max_member) {
+	public StudyVO(String study_name, String study_tag, String region, int max_number) {
 		super();
 		this.study_name = study_name;
 		this.study_tag = study_tag;
 		this.region = region;
-		this.max_member = max_member;
+		this.max_number = max_number;
 	}
 
 	//추가로 생성자 만들수도
@@ -38,11 +38,11 @@ public class StudyVO {
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	public int getMax_member() {
-		return max_member;
+	public int getMax_number() {
+		return max_number;
 	}
-	public void setMax_member(int max_member) {
-		this.max_member = max_member;
+	public void setMax_number(int max_number) {
+		this.max_number = max_number;
 	}
 	
 	
