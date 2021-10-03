@@ -22,13 +22,13 @@ import com.gb.wnn.vo.StudyVO;
 /**
  * Handles requests for the application home page.
  */
-//@Controller
+@Controller
 public class HomeController {
 	
 	@Resource(name="studyService")
 	private StudyService studyService;
 
-	//
+	//전체 스터디 목록 조회
 	@RequestMapping(value="/studyAll.do")
 	public String studyAll(Model model) throws Exception{
 		ArrayList <StudyVO> alist = studyService.getAllStudy();
