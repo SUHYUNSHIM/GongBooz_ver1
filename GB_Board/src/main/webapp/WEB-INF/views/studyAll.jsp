@@ -28,6 +28,18 @@
 		</c:forEach>
 	</tbody>
 	</table>
+	
+	<!--form, controller로 검색 만들기..  -->
+<div id="holder">
+	<!--동적 버튼 생성  -->
+	
+	<div id="create_btn">
+	<!--버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
+	<form action="new_study" method="post">		
+		<button id= "study_create" type="submit" name="study_create">스터디 만들기</button>		
+	</form>
+	</div>
+</div>
 
 </body>
 </html>
