@@ -13,12 +13,12 @@
 	<!--private String study_name; //스터디 모임 이름
 	private String study_tag; //스터디 종류 태그
 	private String region; //오프라인 장소
-	private int max_member; //인원 제한수   -->
+	private int max_number; //인원 제한수   -->
 	
 <!--검색 창  -->
 <section class="sc-search searching">
 	<form class="search-controller">
-		<input type="text" placeholder="참여를 원하는 스터디를 검색해 보세요.">
+		<input type="text" placeholder="참여를 원하는 스터디를 검색해 보세요." style="width:300px;">
 		<button>검색</button>
 	</form>
 </section>
@@ -27,9 +27,9 @@
 <section class ="sc-holder">
 	<!--동적 버튼 생성  -->
 	
-	<div id="create_btn">
+	<div id="create_btn" style="float:right;">
 	<!--버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
-	<form action="new_study" method="post">		
+	<form action="studyInsertForm.do" method="post">		
 		<button id= "study_create" type="submit" name="study_create">스터디 만들기</button>		
 	</form>
 	</div>

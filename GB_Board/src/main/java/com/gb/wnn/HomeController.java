@@ -35,11 +35,16 @@ public class HomeController {
 		model.addAttribute("alist",alist);
 		return "studyAll"; //studyAll.jsp에서 전부 출력
 	}
-	
-	/*//입력 
+	 
 	@RequestMapping(value="/studyInsertForm.do")
 	public String studyInsertForm(@ModelAttribute("studyVO") StudyVO studyVO, Model model) throws Exception{
 		return "studyInsertForm";
-	}*/	
+	}
+	
+	@RequestMapping(value="/studyInsert.do")
+	public String studyInsert(@ModelAttribute("studyVO") StudyVO studyVO, Model model) {
+		studyService.insertStudy(studyVO);
+		return "redirect:/studyAll.do";
+	}
 	
 }
