@@ -31,17 +31,17 @@ public class StudyServiceImpl implements StudyService{
 	}
 
 	@Override
-	public StudyVO getStudy_region(StudyVO studyVO) {
+	public ArrayList <StudyVO> getStudy_region(StudyVO studyVO) {
 		return studyroom.getStudy_region(studyVO);
 	}
 
 	@Override
-	public StudyVO getStudy_tag(StudyVO studyVO) {
+	public ArrayList <StudyVO> getStudy_tag(StudyVO studyVO) {
 		return studyroom.getStudy_tag(studyVO);
 	}
 
 	@Override
-	public StudyVO getStudy_name(StudyVO studyVO) {
+	public ArrayList <StudyVO> getStudy_name(StudyVO studyVO) {
 		return studyroom.getStudy_name(studyVO);
 	}
 

@@ -16,12 +16,33 @@
 	private int max_number; //인원 제한수   -->
 	
 <!--검색 창  -->
-<section class="sc-search searching">
-	<form class="search-controller">
-		<input type="text" placeholder="참여를 원하는 스터디를 검색해 보세요." style="width:300px;">
-		<button>검색</button>
+<section class="sc-search">
+	<form action="search-controller.do" method="post">
+		<select name="filter">
+			<option value="study_name">스터디명</option>
+			<option value="study_tag">태그</option>
+			<option value="region">오프라인 지역</option>
+		</select>	
+		<input type="text" name="search" placeholder="필터에 맞춰 검색해보세요">
+		<input type="submit" value="검색">
 	</form>
 </section>
+
+<div id="search_reesult">
+	<table border="2">
+		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th></tr></thead>
+		<tbody>
+			<c:forEach var="imsi" items="${svo_name}">
+				<tr>
+					<td>${imsi.study_name }</td>
+					<td>${imsi.study_tag }</td>
+					<td>${imsi.region }</td>
+					<td>${imsi.max_number}</td>
+			</tr>
+			</c:forEach>
+		</tbody>
+		</table>
+</div>
 
 <!--form, controller로 검색 만들기..  -->
 <section class ="sc-holder">

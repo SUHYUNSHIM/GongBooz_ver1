@@ -13,17 +13,17 @@
 	<!--스터디 지역으로 검색 -->
 	<select id="getStudy_region" resultType="StudyVO">
 		SELECT study_name, study_tag , region , max_number
-		FROM STUDYROOM where region=#{region}
+		FROM STUDYROOM where region like '%' || #{region} || '%' order by study_name
 	</select>
 	<!--스터디 태그로 검색 -->
 	<select id="getStudy_tag" resultType="StudyVO">
 		SELECT study_name, study_tag , region , max_number
-		FROM STUDYROOM where study_tag=#{study_tag}
+		FROM STUDYROOM where study_tag like '%' || #{study_tag} || '%' order by study_name
 	</select>
 	<!--스터디 이름으로 검색  -->
 	<select id="getStudy_name" resultType="StudyVO">
 		SELECT study_name, study_tag , region , max_number
-		FROM STUDYROOM where study_name=#{study_name}
+		FROM STUDYROOM where study_name like '%' || #{study_name} || '%' order by study_name
 	</select>
 	
 	<!--iBatis :#name#  -->

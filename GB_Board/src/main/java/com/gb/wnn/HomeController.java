@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,5 +47,34 @@ public class HomeController {
 		studyService.insertStudy(studyVO);
 		return "redirect:/studyAll.do";
 	}
+	
+	@RequestMapping(value="/search-controller.do", method= RequestMethod.POST)
+	public String studySearch(@ModelAttribute("studyVO") StudyVO studyVO,Model model, HttpServletRequest req) {
+		String filter = req.getParameter("filter");
+		String search = req.getParameter("search");	
+		
+		if(filter.equals("study_name")) {
+			studyVO.setStudy_name(search);
+			ArrayList <StudyVO> svo_name = studyService.getStudy_name(studyVO);
+			model.addAttribute("svo_name",svo_name);
+			
+			return "studyAll";
+		}
+		else if(filter.equals("study_tag")) {
+			studyVO.setStudy_tag(search);
+			ArrayList <StudyVO> svo_tag = studyService.getStudy_tag(studyVO);
+			model.addAttribute("svo_tag",svo_tag);
+			return "redirect:/studyAll.do";
+		}
+		else if(filter.equals("region")) {
+			studyVO.setRegion(search);
+			ArrayList <StudyVO> svo_region = studyService.getStudy_region(studyVO);
+			model.addAttribute("svo_region",svo_region);
+			return "redirect:/studyAll.do";
+		}
+		return "redirect:/studyAll.do";
+		
+	}
+	
 	
 }
