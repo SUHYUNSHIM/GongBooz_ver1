@@ -23,40 +23,44 @@
 			<option value="study_tag">태그</option>
 			<option value="region">오프라인 지역</option>
 		</select>	
-		<input type="text" name="search" placeholder="필터에 맞춰 검색해보세요">
+		<input type="text" name="search" placeholder="필터에 맞춰 검색해보세요" style="width:300px">
 		<input type="submit" value="검색">
 	</form>
+</section>
+
+<section class ="sc-search">
+
+<!--form, controller로 검색 만들기..  -->
+
+	<!--동적 버튼 생성  -->
+	
+	<div id="create_btn">
+	<!--버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
+	<form action="studyInsertForm.do" method="post">		
+		<h3>스터디 목록&nbsp;&nbsp;<button id= "study_create" type="submit" name="study_create">스터디 만들기</button></h3>	
+	</form>
+	</div>
 </section>
 
 <div id="search_reesult">
 	<table border="2">
 		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th></tr></thead>
 		<tbody>
-			<c:forEach var="imsi" items="${svo_name}">
+			<c:forEach var="imsi" items="${alist}">
 				<tr>
 					<td>${imsi.study_name }</td>
 					<td>${imsi.study_tag }</td>
 					<td>${imsi.region }</td>
-					<td>${imsi.max_number}</td>
+					<td>${imsi.max_number}</td> <!--스터디 가입하기 버튼 누르면 0/max_number->1/max_number 순으로 들어가야 한다.  -->
 			</tr>
 			</c:forEach>
 		</tbody>
 		</table>
 </div>
 
-<!--form, controller로 검색 만들기..  -->
-<section class ="sc-holder">
-	<!--동적 버튼 생성  -->
-	
-	<div id="create_btn" style="float:right;">
-	<!--버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
-	<form action="studyInsertForm.do" method="post">		
-		<button id= "study_create" type="submit" name="study_create">스터디 만들기</button>		
-	</form>
-	</div>
 
 <br></br>
-
+<%-- <section class = "sc-holder">
 	<div class="studyroom-container">
 	
 		<table border="2">
@@ -75,22 +79,8 @@
 		
 		<!--table에서 studyrooom 하나의 div 클래스들 형태로 바꿔야 한다.  티켓박스 공연 좌석 표 만들때 코드 참조-->
 		<!--태그 클래스 명따라서 안에 innterHtml로 쓴다  -->
-		<div class="sc-studyroom rooms">
-			<div class="study_tag">
-			<div class="sc-studyroom tag">
-				<p>외국어</p>
-			</div>
-			</div>
-			<div class="study_name">
-				<h3>토익 900 스터디</h3>
-				<p>스터디 만든이</p>
-			</div>
-			<div class="study_info">
-				<div class="study_info region">강남역 Y어학원</div>
-				<div class="study_info users_num">1/5</div>
-			</div>
-		</div>	
+	
 	</div>
-</section>
+</section> --%>
 </body>
 </html>

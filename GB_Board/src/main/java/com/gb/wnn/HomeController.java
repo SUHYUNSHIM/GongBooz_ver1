@@ -56,21 +56,21 @@ public class HomeController {
 		if(filter.equals("study_name")) {
 			studyVO.setStudy_name(search);
 			ArrayList <StudyVO> svo_name = studyService.getStudy_name(studyVO);
-			model.addAttribute("svo_name",svo_name);
+			model.addAttribute("alist",svo_name);
 			
 			return "studyAll";
 		}
 		else if(filter.equals("study_tag")) {
 			studyVO.setStudy_tag(search);
 			ArrayList <StudyVO> svo_tag = studyService.getStudy_tag(studyVO);
-			model.addAttribute("svo_tag",svo_tag);
-			return "redirect:/studyAll.do";
+			model.addAttribute("alist",svo_tag);
+			return "studyAll";
 		}
 		else if(filter.equals("region")) {
 			studyVO.setRegion(search);
 			ArrayList <StudyVO> svo_region = studyService.getStudy_region(studyVO);
-			model.addAttribute("svo_region",svo_region);
-			return "redirect:/studyAll.do";
+			model.addAttribute("alist",svo_region);
+			return "studyAll";
 		}
 		return "redirect:/studyAll.do";
 		
