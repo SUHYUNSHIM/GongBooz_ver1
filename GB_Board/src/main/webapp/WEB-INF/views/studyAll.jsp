@@ -70,11 +70,9 @@
 	<div class="studyroom-container">	
 		<c:forEach items="${alist}" varStatus="status">	
 		<div id="studyroom">
-			${status.count}
-			${alist[status.count].study_name}<br></br>
-			${alist[status.count].study_tag}<br></br>
-			${alist[status.count].region}<br></br>
-			${alist[status.count].max_number}
+			${status.count} ${alist[status.count].study_name} ${alist[status.count].study_tag}
+			${alist[status.count].region}
+			${alist[status.count].max_number}<br></br>
 		
 		<c:if test= "${status.count eq 3}">
 			<c:out value="줄바꾸기" />
