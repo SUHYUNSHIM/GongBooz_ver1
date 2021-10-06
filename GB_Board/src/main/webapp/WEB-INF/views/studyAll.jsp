@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<title>GongBooz-online study</title>
+<link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
+</head> 
 <body>
 	<h1>스터디 모집 게시판</h1>
 	<!--DB에서 가져와서 실시간 반영. mapper. ajax로 검색  -->
@@ -42,45 +44,48 @@
 	</div>
 </section>
 
-<div id="search_reesult">
+<div id="search_result">
+
+	
+
 	<table border="2">
 		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th></tr></thead>
 		<tbody>
-			<c:forEach var="imsi" items="${alist}">
+			<c:forEach var="imsi" items="${alist}" varStatus="status">
+			[${status.index}]:${alist[status.index].study_name}
 				<tr>
 					<td>${imsi.study_name }</td>
 					<td>${imsi.study_tag }</td>
 					<td>${imsi.region }</td>
 					<td>${imsi.max_number}</td> <!--스터디 가입하기 버튼 누르면 0/max_number->1/max_number 순으로 들어가야 한다.  -->
-			</tr>
+			</tr>			
 			</c:forEach>
 		</tbody>
-		</table>
+		</table>	
 </div>
-
+<!-- https://offbyone.tistory.com/367  c ,jstl 문법-->
 
 <br></br>
-<%-- <section class = "sc-holder">
-	<div class="studyroom-container">
-	
-		<table border="2">
-		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th></tr></thead>
-		<tbody>
-			<c:forEach var="imsi" items="${alist}">
-				<tr>
-					<td>${imsi.study_name }</td>
-					<td>${imsi.study_tag }</td>
-					<td>${imsi.region }</td>
-					<td>${imsi.max_number}</td>
-			</tr>
-			</c:forEach>
-		</tbody>
-		</table>
+<section class = "sc-holder">
+	<div class="studyroom-container">	
+		<c:forEach items="${alist}" varStatus="status">	
+		<div id="studyroom">
+			${status.count}
+			${alist[status.count].study_name}<br></br>
+			${alist[status.count].study_tag}<br></br>
+			${alist[status.count].region}<br></br>
+			${alist[status.count].max_number}
 		
+		<c:if test= "${status.count eq 3}">
+			<c:out value="줄바꾸기" />
+			<p></p>	
+		</c:if>		
+		</div>		
+		</c:forEach>			
 		<!--table에서 studyrooom 하나의 div 클래스들 형태로 바꿔야 한다.  티켓박스 공연 좌석 표 만들때 코드 참조-->
 		<!--태그 클래스 명따라서 안에 innterHtml로 쓴다  -->
 	
 	</div>
-</section> --%>
+</section> 
 </body>
 </html>

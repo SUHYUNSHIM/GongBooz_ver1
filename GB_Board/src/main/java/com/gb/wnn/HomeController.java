@@ -57,7 +57,7 @@ public class HomeController {
 			studyVO.setStudy_name(search);
 			ArrayList <StudyVO> svo_name = studyService.getStudy_name(studyVO);
 			model.addAttribute("alist",svo_name);
-			
+						
 			return "studyAll";
 		}
 		else if(filter.equals("study_tag")) {
