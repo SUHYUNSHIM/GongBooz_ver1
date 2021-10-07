@@ -36,7 +36,7 @@ public class HomeController {
 		model.addAttribute("alist",alist);
 		return "studyAll"; //studyAll.jsp에서 전부 출력
 	}
-	 
+	
 	@RequestMapping(value="/studyInsertForm.do")
 	public String studyInsertForm(@ModelAttribute("studyVO") StudyVO studyVO, Model model) throws Exception{
 		return "studyInsertForm";
@@ -57,6 +57,7 @@ public class HomeController {
 			studyVO.setStudy_name(search);
 			ArrayList <StudyVO> svo_name = studyService.getStudy_name(studyVO);
 			model.addAttribute("alist",svo_name);
+			req.setAttribute("alist", svo_name);
 						
 			return "studyAll";
 		}
@@ -64,12 +65,14 @@ public class HomeController {
 			studyVO.setStudy_tag(search);
 			ArrayList <StudyVO> svo_tag = studyService.getStudy_tag(studyVO);
 			model.addAttribute("alist",svo_tag);
+			req.setAttribute("alist", svo_tag);
 			return "studyAll";
 		}
 		else if(filter.equals("region")) {
 			studyVO.setRegion(search);
 			ArrayList <StudyVO> svo_region = studyService.getStudy_region(studyVO);
 			model.addAttribute("alist",svo_region);
+			req.setAttribute("alist", svo_region);
 			return "studyAll";
 		}
 		return "redirect:/studyAll.do";

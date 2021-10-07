@@ -4,10 +4,12 @@
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
+<link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
+<script src="${path}/resources/js/studyroomMain.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>GongBooz-online study</title>
-<link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
+
 </head> 
 <body>
 	<h1>스터디 모집 게시판</h1>
@@ -16,6 +18,14 @@
 	private String study_tag; //스터디 종류 태그
 	private String region; //오프라인 장소
 	private int max_number; //인원 제한수   -->
+	
+<%
+	final int ROWSIZE =4;
+	final int BLOCK = 5;
+	int pg = 1;
+	System.out.println(request.getAttribute("alist"));
+%>
+	<%-- ${alist}   com.gb.wnn.vo.StudyVO@300d78ac--%>
 	
 <!--검색 창  -->
 <section class="sc-search">
@@ -52,6 +62,7 @@
 		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th></tr></thead>
 		<tbody>
 			<c:forEach var="imsi" items="${alist}" varStatus="status">
+			
 			[${status.index}]:${alist[status.index].study_name}
 				<tr>
 					<td>${imsi.study_name }</td>
@@ -74,15 +85,20 @@
 			${alist[status.count].region}
 			${alist[status.count].max_number}<br></br>
 		
-		<c:if test= "${status.count eq 3}">
+		<c:if test= "${status.count%3 eq 0}">
 			<c:out value="줄바꾸기" />
 			<p></p>	
 		</c:if>		
 		</div>		
 		</c:forEach>			
 		<!--table에서 studyrooom 하나의 div 클래스들 형태로 바꿔야 한다.  티켓박스 공연 좌석 표 만들때 코드 참조-->
-		<!--태그 클래스 명따라서 안에 innterHtml로 쓴다  -->
-	
+		<!--태그 클래스 명따라서 안에 innterHtml로 쓴다  -->	
+	</div>
+</section>
+<section class="sc-studyrooms" style="float:left">
+	<div class="studyrooms-container">
+	<ul id="rooms">
+	</ul>
 	</div>
 </section> 
 </body>
