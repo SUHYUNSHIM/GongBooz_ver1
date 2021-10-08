@@ -18,7 +18,7 @@
 	private String study_tag; //스터디 종류 태그
 	private String region; //오프라인 장소
 	private int max_number; //인원 제한수   -->
-	
+<!-- Spring MVC, jstl 관련 참조 글 https://blog.nerdfactory.ai/2019/05/05/spring-mvc-jstl.html	 -->
 <%
 	final int ROWSIZE =4;
 	final int BLOCK = 5;
@@ -50,7 +50,7 @@
 	<div id="create_btn">
 	<!--버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
 	<form action="studyInsertForm.do" method="post">		
-		<h3>스터디 목록&nbsp;&nbsp;<button id= "study_create" type="submit" name="study_create">스터디 만들기</button></h3>	
+		<h3>스터디 목록&nbsp;&nbsp;<button id= "study_create" type="submit" name="study_create">스터디 만들기➕</button></h3>	
 	</form>
 	</div>
 </section>
@@ -58,7 +58,7 @@
 <div id="search_result">
 
 	
-
+<!--표로 보기  -->
 	<table border="2">
 		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th></tr></thead>
 		<tbody>
@@ -82,9 +82,9 @@
 	<div class="studyroom-container">	
 		<c:forEach items="${alist}" varStatus="status">	
 		<div id="studyroom">
-			${status.count} ${alist[status.count].study_name} ${alist[status.count].study_tag}
-			${alist[status.count].region}
-			${alist[status.count].max_number}<br></br>
+			${status.index} ${alist[status.index].study_name} ${alist[status.index].study_tag}
+			${alist[status.index].region}
+			${alist[status.index].max_number}<br></br>
 		
 		<c:if test= "${status.count%3 eq 0}">
 			<c:out value="줄바꾸기" />
