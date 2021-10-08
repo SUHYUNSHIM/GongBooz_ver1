@@ -24,6 +24,7 @@
 	final int BLOCK = 5;
 	int pg = 1;
 	System.out.println(request.getAttribute("alist"));
+	
 %>
 	<%-- ${alist}   com.gb.wnn.vo.StudyVO@300d78ac--%>
 	
@@ -35,11 +36,11 @@
 			<option value="study_tag">태그</option>
 			<option value="region">오프라인 지역</option>
 		</select>	
-		<input type="text" name="search" placeholder="필터에 맞춰 검색해보세요" style="width:300px">
+		<input type="text" name="search" value="${searchKeyword}" placeholder="필터에 맞춰 검색해보세요" style="width:300px">
 		<input type="submit" value="검색">
 	</form>
+	검색어 > ${whatSearched}
 </section>
-
 <section class ="sc-search">
 
 <!--form, controller로 검색 만들기..  -->
