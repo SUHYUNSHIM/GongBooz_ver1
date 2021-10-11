@@ -49,12 +49,19 @@
 	
 	<div id="create_btn">
 	<!-- 버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
-	<form action="studyInsertForm.do" method="post">	
-		<h3>스터디 목록&nbsp;&nbsp;<button id= "study_create" type="submit" name="study_create">스터디 만들기➕</button></h3>	
-	 </form>
+	<!-- <form action="studyInsertForm.do" method="post"> -->	
+		<h3>스터디 목록&nbsp;&nbsp;<button id= "study_create" onclick="" name="study_create">스터디 만들기➕</button></h3>	
+<!-- 	 </form> -->
 	</div>
 </section>
 
+<!--모달 호출  -->
+<script>
+	function fnInsert(){
+		$('#ModalModal .modal-content').load("studyInsertForm.jsp");
+		$('#MoaModal').modal();
+	}
+</script>
 
 
 <div id="search_result">
@@ -62,7 +69,7 @@
 	
 <!--표로 보기  -->
 	<table border="2">
-		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th><th>현재 참여인원</th></tr></thead>
+		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th><th>참여</th></tr></thead>
 		<tbody>
 			<c:forEach var="imsi" items="${alist}" varStatus="status">
 			
@@ -88,7 +95,8 @@
 			${status.index} ${alist[status.index].study_name} ${alist[status.index].study_tag}
 			${alist[status.index].region}
 			${alist[status.index].max_number}<br></br>
-		
+		<ul id="place">
+		</ul>
 		<c:if test= "${status.count%3 eq 0}">
 			<c:out value="줄바꾸기" />
 			<p></p>	

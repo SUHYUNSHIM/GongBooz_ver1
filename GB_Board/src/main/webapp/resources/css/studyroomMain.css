@@ -25,7 +25,7 @@ h1{
 	font-size: 30px;
 }
 
-.sc-search{
+.sc-search,.modal-header{
 	font-family: 'GmarketSansMedium';
 	font-size: 15px;
 }
@@ -35,7 +35,17 @@ h1{
 	font-size: 15px;
 }
 
-h5{
+h5 {
 	font-family: 'GmarketSansLight';
 	font-size: 13px;
+}
+
+.modal-body {
+	font-family: 'GmarketSansLight';
+	font-size: 13px;
+}
+
+.modal-footer{
+	font-family: 'GmarketSansLight';
+	font-size: 10px;
 }
