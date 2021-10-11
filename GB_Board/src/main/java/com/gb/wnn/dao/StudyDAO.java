@@ -12,5 +12,6 @@ public interface StudyDAO {
 	ArrayList <StudyVO> getStudy_name(StudyVO studyVO); //이름으로 스터디 찾기
 		
 	void deleteStudy(StudyVO studyVO); //스터디를 삭제한다.
+	void updateStudy(StudyVO stuyVO); //참가인원이 변동될수록 수행된다.참여하시겠습니까? 탈퇴하시겠습니까?
 }
 //+ mybatis는 sqlsession 등 객체가 무조건 중요 

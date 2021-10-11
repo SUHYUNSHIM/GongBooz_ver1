@@ -12,6 +12,7 @@ public interface StudyService {
 	ArrayList <StudyVO> getStudy_name(StudyVO studyVO); //이름으로 스터디 찾기
 		
 	void deleteStudy(StudyVO studyVO);
+	void updateStudy(StudyVO stuyVO); //잔여 인원 업데이트.
 	
 	//service와 dao가 내용이 같다.
    

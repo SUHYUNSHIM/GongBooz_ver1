@@ -48,19 +48,21 @@
 	<!--동적 버튼 생성  -->
 	
 	<div id="create_btn">
-	<!--버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
-	<form action="studyInsertForm.do" method="post">		
+	<!-- 버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
+	<form action="studyInsertForm.do" method="post">	
 		<h3>스터디 목록&nbsp;&nbsp;<button id= "study_create" type="submit" name="study_create">스터디 만들기➕</button></h3>	
-	</form>
+	 </form>
 	</div>
 </section>
+
+
 
 <div id="search_result">
 
 	
 <!--표로 보기  -->
 	<table border="2">
-		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th></tr></thead>
+		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th><th>현재 참여인원</th></tr></thead>
 		<tbody>
 			<c:forEach var="imsi" items="${alist}" varStatus="status">
 			
@@ -70,6 +72,7 @@
 					<td>${imsi.study_tag }</td>
 					<td>${imsi.region }</td>
 					<td>${imsi.max_number}</td> <!--스터디 가입하기 버튼 누르면 0/max_number->1/max_number 순으로 들어가야 한다.  -->
+					<td>${imsi.max_number-imsi.cur_number}</td>
 			</tr>			
 			</c:forEach>
 		</tbody>

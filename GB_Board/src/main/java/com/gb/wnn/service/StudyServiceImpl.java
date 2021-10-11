@@ -51,5 +51,12 @@ public class StudyServiceImpl implements StudyService{
 	}
 	//select *가 mapper에 있다.
 	//전부 가져와서 종이상자 = resultSet에 넣고 이것을 객체 단위로 해서 넘겨줄 것이다.
+
+	//+
+	@Override
+	public void updateStudy(StudyVO studyVO) {
+		studyroom.updateStudy(studyVO);
+		
+	}
 	
 }
