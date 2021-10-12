@@ -7,13 +7,17 @@
 <link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
 <script src="${path}/resources/js/studyroomMain.js"></script>
 <head>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>GongBooz-online study</title>
+
 
 </head> 
 <body>
 	<h1>스터디 모집 게시판</h1>
-	<!--DB에서 가져와서 실시간 반영. mapper. ajax로 검색  -->
+	
 	<!--private String study_name; //스터디 모임 이름
 	private String study_tag; //스터디 종류 태그
 	private String region; //오프라인 장소
@@ -23,7 +27,7 @@
 	final int ROWSIZE =4;
 	final int BLOCK = 5;
 	int pg = 1;
-	System.out.println(request.getAttribute("alist"));
+	//System.out.println(request.getAttribute("alist"));
 	
 %>
 	<%-- ${alist}   com.gb.wnn.vo.StudyVO@300d78ac--%>
@@ -39,34 +43,29 @@
 		<input type="text" name="search" placeholder="필터에 맞춰 검색해보세요" style="width:300px">
 		<input type="submit" value="검색">
 	</form>
-	<h5>${whatSearched} 검색결과✅</h5>
+	<p></p>
+	<h3>${whatSearched} 검색결과☑</h3>
 </section>
-<section class ="sc-search">
 
-<!--form, controller로 검색 만들기..  -->
-
-	<!--동적 버튼 생성  -->
-	
+<section class ="sc-insert">
 	<div id="create_btn">
 	<!-- 버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
-	<!-- <form action="studyInsertForm.do" method="post"> -->	
-		<h3>스터디 목록&nbsp;&nbsp;<button id= "study_create" onclick="" name="study_create">스터디 만들기➕</button></h3>	
-<!-- 	 </form> -->
+	<!-- <form action="studyInsertForm.do" method="post"> -->
+		스터디 목록&nbsp;&nbsp;<button data-toggle="modal" id= "study_create" data-target="#modal">➕</button>
+	
+	<!--  </form> -->
+	</div>
+	
+	<div class="modal fade" id="modal">
+	<div class="modal-dialog">
+	<div class="modal-content">
+		<%@ include file="studyInsertForm.jsp" %>
+	</div>
+	</div>
 	</div>
 </section>
 
-<!--모달 호출  -->
-<script>
-	function fnInsert(){
-		$('#ModalModal .modal-content').load("studyInsertForm.jsp");
-		$('#MoaModal').modal();
-	}
-</script>
-
-
-<div id="search_result">
-
-	
+<div id="search_result">	
 <!--표로 보기  -->
 	<table border="2">
 		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th><th>참여</th></tr></thead>

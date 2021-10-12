@@ -5,10 +5,12 @@
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
-<link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
+
 <head>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
 <meta charset="UTF-8">
 <title>스터디 등록</title>
 </head>
@@ -23,8 +25,8 @@
 	<!--body  -->
 	<div class="modal-body">
 		<form action="studyInsert.do" method="post">
-		<h3>스터디 이름 <input type="text" name="study_name"></h3>
-		<h3>스터디 종류 <select name="study_tag">
+		✔스터디 이름 &nbsp;&nbsp;&nbsp;<input type="text" name="study_name" required><p></p>
+		✔스터디 종류&nbsp;&nbsp;&nbsp;<select name="study_tag" required>
 			<option value="외국어">외국어</option>
 			<option value="면접">면접</option>
 			<option value="스터디윗미">스터디윗미</option>
@@ -33,13 +35,16 @@
 			<option value="공무원">공무원</option>
 			<option value="기타">기타</option>
 			</select>
-		<h3>오프라인 모임 장소 <input type="text" name="region"></h3>
-		<h3>정원 <input type="text" name="max_number"></h3>
-		<input type="submit" value="등록">🔘</h3>
+		<p></p>
+		✔오프라인 모임 장소&nbsp;&nbsp;&nbsp; <input type="text" name="region" required>
+		<p></p>
+		✔정원&nbsp;&nbsp;&nbsp; <input type="text" name="max_number" required>
+		<input type="submit" value="등록하기" id="plus">
 		</form>
 	</div>
 	<div class="modal-footer">
-		(GoongBooz)
+		-GongBooz-
+		<!--  <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel">취소</button> -->
 	</div>	
 </body>
 </html>
