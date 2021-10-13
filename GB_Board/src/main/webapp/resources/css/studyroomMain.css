@@ -1,0 +1,167 @@
+/* 폰트 출처  https://noonnu.cc/font_page/366 */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 
+body{
+	position: absolute;
+ 	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */
+
+.outer{
+	display:flex;
+	margin:20px;
+}
+.inner{
+	margin:auto;
+}
+
+h1{
+	font-family: 'GmarketSansBold';
+	font-size: 30px;
+}
+
+.sc-search{
+	font-family: 'GmarketSansMedium';
+	font-size: 15px;	
+}
+
+
+.sc-insert{
+	font-family: 'GmarketSansMedium';
+	font-size: 20px;
+}
+
+.sc_result{
+	font-family: 'GmarketSansLight';
+	font-size: 15px;
+}
+
+h3 {
+	font-family: 'GmarketSansLight';
+	font-size: 13px;
+	
+}
+
+#searched{
+	font-family: 'GmarketSansLight';
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+
+.modal-header{
+	text-align: center;
+}
+
+.modal-body {
+	font-family: 'GmarketSansLight';
+	font-size: 16px;
+	
+	width: 100%;
+	height: 100%;
+	margin: 50px;
+	padding: 0;
+}
+
+.modal-footer{
+	font-family: 'GmarketSansLight';
+	font-size: 20px;
+	margin-right: 170px;
+}
+
+#plus{
+	background-color:#E0E0E0; 
+	border-color: #9E9E9E;
+	border-radius: 5px;
+	margin-left: 150px;
+	font-size: 20px;
+	margin-top: 30px;
+	transition-duration: 0.4s;
+}
+
+#study_create  {
+	background-color:transparent;
+	border:0;
+	outline:0;
+	transition-duration: 0.4s;
+	
+	opacity: 0.6;
+	transition: 0.3s;
+}
+
+#filter{
+	padding:3px;
+}
+
+#search_btn {	
+	border:0;
+	outline:0;
+	transition-duration: 0.4s;
+	padding:3px;
+	
+	opacity: 0.6;
+	transition: 0.3s;
+}
+#study_create:hover , #search_btn:hover{
+	opacity:1
+}
+
+#plus:hover{
+	background: skyblue;
+	color:white;
+}
+
+/*https://homzzang.com/b/css-191 버튼 효과 */
+
+#rooms li{
+	list-style : none outside none;
+	position: absolute;
+}
+/* 버튼 눌림, hover 효과********************************* */
+ #rooms li:hover::before{
+ 	width:100%;
+ }
+ #rooms li::after{
+ 	position: absolute;
+ 	right:0px;
+ 	top:0px;
+ 	z-index:-1;
+ 	width:0%
+ 	height:1px;
+ 	
+ 	-webkit -transition: all 0.4s cubic-bezeir(.5,.24,0,1);
+ 	transition: all 0.4s cubic-beizer(.5,.24,0,1)
+ }
+#rooms li:hover::after{
+	width:100%
+}
+#rooms li:hover{	
+	border-top: 2px solid #F6F6F6;	
+}
+
+#rooms .study{
+	background-color: #c0c0c0;
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+}
+
