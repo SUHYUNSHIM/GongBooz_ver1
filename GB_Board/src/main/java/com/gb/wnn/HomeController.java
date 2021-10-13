@@ -78,7 +78,7 @@ public class HomeController {
 			req.setAttribute("alist", svo_region);
 			return "studyAll";
 		}
-		return "redirect:/studyAll.do";
+		return "studyAll";
 		
 	}
 	
