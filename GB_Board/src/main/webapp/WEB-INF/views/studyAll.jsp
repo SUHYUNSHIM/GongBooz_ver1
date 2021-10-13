@@ -7,15 +7,15 @@
 <link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
 <script src="${path}/resources/js/studyroomMain.js"></script>
 <head>
-	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>GongBooz-online study</title>
-
-
 </head> 
 <body>
+<div class="outer">
+<div class="inner">
 	<h1>스터디 모집 게시판</h1>
 	
 	<!--private String study_name; //스터디 모임 이름
@@ -31,20 +31,20 @@
 	
 %>
 	<%-- ${alist}   com.gb.wnn.vo.StudyVO@300d78ac--%>
-	
+
 <!--검색 창  -->
 <section class="sc-search">
 	<form action="search-controller.do" method="post">
-		<select name="filter">
+		<select name="filter" id="filter">
 			<option value="study_name">스터디명</option>
 			<option value="study_tag">태그</option>
 			<option value="region">오프라인 지역</option>
 		</select>	
 		<input type="text" name="search" placeholder="필터에 맞춰 검색해보세요" style="width:300px">
-		<input type="submit" value="검색">
+		<input type="submit" value="검색" id="search_btn">
 	</form>
 	<p></p>
-	<h3>${whatSearched} 검색결과☑</h3>
+	<div id="searched">${whatSearched} 검색결과☑</div>
 </section>
 
 <section class ="sc-insert">
@@ -65,7 +65,7 @@
 	</div>
 </section>
 
-<div id="search_result">	
+<section class ="sc_result">	
 <!--표로 보기  -->
 	<table border="2">
 		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th><th>참여</th></tr></thead>
@@ -83,7 +83,7 @@
 			</c:forEach>
 		</tbody>
 		</table>	
-</div>
+</section>
 <!-- https://offbyone.tistory.com/367  c ,jstl 문법-->
 
 <br></br>
@@ -112,5 +112,8 @@
 	</ul>
 	</div>
 </section> 
+
+</div>
+</div>
 </body>
 </html>

@@ -19,6 +19,21 @@
     font-weight: normal;
     font-style: normal;
 }
+/* 
+body{
+	position: absolute;
+ 	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */
+
+.outer{
+	display:flex;
+	margin:20px;
+}
+.inner{
+	margin:auto;
+}
 
 h1{
 	font-family: 'GmarketSansBold';
@@ -27,15 +42,18 @@ h1{
 
 .sc-search{
 	font-family: 'GmarketSansMedium';
-	font-size: 17px;
+	font-size: 15px;
+	
+	
 }
+
 
 .sc-insert{
 	font-family: 'GmarketSansMedium';
 	font-size: 20px;
 }
 
-#search_result{
+.sc_result{
 	font-family: 'GmarketSansLight';
 	font-size: 15px;
 }
@@ -46,6 +64,12 @@ h3 {
 	
 }
 
+#searched{
+	font-family: 'GmarketSansLight';
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+
 .modal-header{
 	text-align: center;
 }
@@ -54,8 +78,8 @@ h3 {
 	font-family: 'GmarketSansLight';
 	font-size: 16px;
 	
-	/* width: 100%;
-	height: 100%; */
+	width: 100%;
+	height: 100%;
 	margin: 50px;
 	padding: 0;
 }
@@ -73,11 +97,38 @@ h3 {
 	margin-left: 150px;
 	font-size: 20px;
 	margin-top: 30px;
+	transition-duration: 0.4s;
 }
 
-#study_create{
+#study_create  {
 	background-color:transparent;
 	border:0;
 	outline:0;
+	transition-duration: 0.4s;
+	
+	opacity: 0.6;
+	transition: 0.3s;
+}
+
+#filter{
+	padding:3px;
+}
+
+#search_btn {	
+	border:0;
+	outline:0;
+	transition-duration: 0.4s;
+	padding:3px;
+	
+	opacity: 0.6;
+	transition: 0.3s;
+}
+#study_create:hover , #search_btn:hover{
+	opacity:1
+}
+
+#plus:hover{
+	background: tomato;
+	color:white;
 }
 
