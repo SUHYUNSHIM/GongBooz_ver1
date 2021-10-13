@@ -42,9 +42,7 @@ h1{
 
 .sc-search{
 	font-family: 'GmarketSansMedium';
-	font-size: 15px;
-	
-	
+	font-size: 15px;	
 }
 
 
@@ -128,7 +126,42 @@ h3 {
 }
 
 #plus:hover{
-	background: tomato;
+	background: skyblue;
 	color:white;
+}
+
+/*https://homzzang.com/b/css-191 버튼 효과 */
+
+#rooms li{
+	list-style : none outside none;
+	position: absolute;
+}
+/* 버튼 눌림, hover 효과********************************* */
+ #rooms li:hover::before{
+ 	width:100%;
+ }
+ #rooms li::after{
+ 	position: absolute;
+ 	right:0px;
+ 	top:0px;
+ 	z-index:-1;
+ 	width:0%
+ 	height:1px;
+ 	
+ 	-webkit -transition: all 0.4s cubic-bezeir(.5,.24,0,1);
+ 	transition: all 0.4s cubic-beizer(.5,.24,0,1)
+ }
+#rooms li:hover::after{
+	width:100%
+}
+#rooms li:hover{	
+	border-top: 2px solid #F6F6F6;	
+}
+
+#rooms .study{
+	background-color: #c0c0c0;
+	height: 100px;
+	width: 100px;
+	display: inline-block;
 }
 

@@ -49,3 +49,5 @@ function studyUI(index, name,tag, max_number, cur_number){ //테이블 인덱스
 //해당 함수의 호출은 jsp에서 하도록.
 //js에서 jsp의 변수들을 가져오게 한다. model. 
 //https://dev-t-blog.tistory.com/8 JS에서 JSP 변수 사용하기
+
+

@@ -44,7 +44,7 @@
 		<input type="submit" value="검색" id="search_btn">
 	</form>
 	<p></p>
-	<div id="searched">${whatSearched} 검색결과☑</div>
+	<div id="searched">${whatSearched} 검색결과✔</div>
 </section>
 
 <section class ="sc-insert">
