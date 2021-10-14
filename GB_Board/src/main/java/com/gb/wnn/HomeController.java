@@ -56,7 +56,7 @@ public class HomeController {
 		String filter = req.getParameter("filter");
 		String search = req.getParameter("search");	
 		
-		String whatSearched = filter+"/"+search;
+		String whatSearched = filter+"|"+search;
 		model.addAttribute("whatSearched", whatSearched);
 		
 		if(filter.equals("study_name")) {

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
-<script src="${path}/resources/js/studyroomMain.js"></script>
+
 <head>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,7 +17,7 @@
 <div class="outer">
 <div class="inner">
 	<h1>스터디 모집 게시판</h1>
-	
+	<hr style="border:2px color=gray;"width="100%">
 	<!--private String study_name; //스터디 모임 이름
 	private String study_tag; //스터디 종류 태그
 	private String region; //오프라인 장소
@@ -48,6 +48,7 @@
 </section>
 
 <section class ="sc-insert">
+	<hr style="border:2px color=gray;"width="100%">
 	<div id="create_btn">
 	<!-- 버튼 누를 시 새로운 버튼형태로 스터디 목록을 볼 수 있다.  -->
 	<!-- <form action="studyInsertForm.do" method="post"> -->
@@ -87,7 +88,7 @@
 <!-- https://offbyone.tistory.com/367  c ,jstl 문법-->
 
 <br></br>
-<section class = "sc-holder">
+<%-- <section class = "sc-holder">
 	<div class="studyroom-container">	
 		<c:forEach items="${alist}" varStatus="status">	
 		<div id="studyroom">
@@ -105,15 +106,10 @@
 		<!--table에서 studyrooom 하나의 div 클래스들 형태로 바꿔야 한다.  티켓박스 공연 좌석 표 만들때 코드 참조-->
 		<!--태그 클래스 명따라서 안에 innterHtml로 쓴다  -->	
 	</div>
-</section>
-<section class="sc-studyrooms" style="float:left">
-	<div class="studyrooms-container">
-	<ul id="rooms">
-	</ul>
-	</div>
-</section> 
+</section> --%>
 
 </div>
 </div>
+
 </body>
 </html>
