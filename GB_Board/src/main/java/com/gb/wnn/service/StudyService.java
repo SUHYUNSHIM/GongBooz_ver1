@@ -14,6 +14,8 @@ public interface StudyService {
 	void deleteStudy(StudyVO studyVO);
 	void updateStudy(StudyVO stuyVO); //잔여 인원 업데이트.
 	
+	StudyVO getStudyRoom(StudyVO studyVO);
+	
 	//service와 dao가 내용이 같다.
    
 }

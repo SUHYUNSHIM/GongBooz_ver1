@@ -8,6 +8,8 @@ import java.util.Locale;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,6 +87,27 @@ public class HomeController {
 		return "redirect:/studyAll";
 		
 	}
+	//스터디룸에 접속한다.
+	@RequestMapping(value="/studyRoom.do")
+	public String studyRoom(@ModelAttribute("studyVO") StudyVO studyVO, Model model,HttpServletRequest req) throws Exception{
+		studyService.updateStudy(studyVO); //참가한 인원수를 증가시키고
+		studyService.getStudyRoom(studyVO); //스터디룸에 접근한다.
+		
+		return "studyRoom";
+	}
+	//진짜로 참여할 것인지 묻는다.
+	@RequestMapping(value="/studyAlert.do")
+	public void studyAlert(@ModelAttribute("studyVO") StudyVO studyVO, Model model,HttpServletRequest req) throws Exception{
+		//studyService.updateStudy(studyVO);
+		HttpSession session = req.getSession();
+		
+		studyService.getStudyRoom(studyVO);
+		String study_name = req.getParameter("study_name");
+		session.setAttribute("study_name", study_name);
+		model.addAttribute("study_name",study_name);
+		//return "studyAll";
+	}
+	
 	
 	
 }

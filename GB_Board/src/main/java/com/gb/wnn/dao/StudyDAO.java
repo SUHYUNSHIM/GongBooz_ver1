@@ -13,5 +13,7 @@ public interface StudyDAO {
 		
 	void deleteStudy(StudyVO studyVO); //스터디를 삭제한다.
 	void updateStudy(StudyVO stuyVO); //참가인원이 변동될수록 수행된다.참여하시겠습니까? 탈퇴하시겠습니까?
+	
+	StudyVO getStudyRoom(StudyVO studyVO);
 }
 //+ mybatis는 sqlsession 등 객체가 무조건 중요 

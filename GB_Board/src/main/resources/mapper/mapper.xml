@@ -42,7 +42,10 @@
 	update STUDYROOM set cur_number = cur_number-1 where study_name=#{study_name}
 	</update> 
 	
-	
+	<!--하나의 스터디룸에 접근  -->
+	<select id="getStudyRoom" resultType="StudyVO">
+	SELECT * FROM STUDYROOM where study_name=#{study_name}
+	</select>
 	
 	
 </mapper>

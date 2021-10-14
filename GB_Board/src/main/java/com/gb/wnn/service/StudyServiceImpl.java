@@ -58,5 +58,10 @@ public class StudyServiceImpl implements StudyService{
 		studyroom.updateStudy(studyVO);
 		
 	}
+
+	@Override
+	public StudyVO getStudyRoom(StudyVO studyVO) {		
+		return studyroom.getStudyRoom(studyVO);
+	}
 	
 }
