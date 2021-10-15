@@ -55,10 +55,11 @@
 		</a>
 		</form>
 		
+		<!--취소 버튼 추가한 것  -------------------------------------->
 		<form action="studyAll.do" method="post">
-			<input type="submit" value="취소" id="plus"> 
+			<input type="submit" value="돌아가기" id="plus"> 
 		</form>
-		<%-- </form>  --%>
+		<!--  ------------------------------------------------>
 		
 	</div>
 

@@ -75,6 +75,7 @@
 					<button id="alert" data-toggle="modal" data-id= "study_alert" data-target="#modal2" value="${imsi.study_name}"
 					type="submit" name="study_name"> 
 					<%-- <button id="alert" onclick="fnModuleInfo('${imsi.study_name}')" data-target="#modal2" type="submit"> --%>
+					 
 					<b>${imsi.study_name}</b></button>
 									 
 					</div>

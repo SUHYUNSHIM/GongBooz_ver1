@@ -139,7 +139,7 @@ public class HomeController {
 		System.out.println("vo"+studyVO.getStudy_name());
 		
 		session.setAttribute("studyVO",aa);
-		System.out.println("session 출력 "+session.getAttribute("study_name"));
+		//System.out.println("session 출력 "+session.getAttribute("study_name"));
 		model.addAttribute("study_name",study_name);
 		return "studyAlert";
 	}	
