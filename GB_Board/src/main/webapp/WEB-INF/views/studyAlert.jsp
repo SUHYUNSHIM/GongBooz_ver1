@@ -11,15 +11,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link href="${path}/resources/css/studyroomMain.css" rel="stylesheet"/>
 <meta charset="UTF-8">
-
+<%@ page import="java.net.URLEncoder" %>
 <title>스터디 입장</title>
 </head>
-<%
-	String study_name = (String)request.getAttribute("study_name");
+ <%-- <%
+	String study_name = (String)session.getAttribute("study_name");
 
-%>
-
+%>  --%>
 <body>
+
+ <script>
+		$(document).on("click", "#alert",function(){
+			var study_name= $(this).val();
+			console.log("스터디 이름"+study_name);
+			/* $("#name").val() = study_name; */
+			$('#name').append(study_name+" 에 참여하시겠습니까?");
+			/* $('#name').val(study_name); */
+			
+		});
+</script>
+
+
+
 <!--header title  -->
 	<div class="modal-header">
 		<h5 class="modal-title" id="insertModalLabel">스터디 참가</h5>
@@ -29,16 +42,20 @@
 	</div>
 	
 	<div class="modal-body">
-		<%-- <form action="studyRoom.do" method="post"> --%>
-			<div id="name">
-			<%-- ${study_name} --%>
-			"${study_name}"에 참가하시겠습니까?
-			<%-- ${study_name}에  참가하시겠습니까? --%>
+		
+			<div id="name">									
+			"${study_name}"에 참가하시겠습니까? 			
 			</div>
-		<a href="studyRoom.do?study_name=${study_name}">
+		
+		<form action="studyRoom.do" method="post"> 
+		<a href="studyRoom.do">
+		<!-- <form action="studyRoom.do" method="post"> -->
 		<input type="submit" value="참여하기" id="plus"> <!--id가 plus인 버튼의 css가 만들어져있다.  -->
+		<input type="hidden" value="${study_name}" name="study_name">
 		</a>
-		<%-- </form> --%>
+		</form>
+		<%-- </form>  --%>
+		
 	</div>
 
 </body>

@@ -98,8 +98,11 @@
 		</tbody>
 		</table>
 		
+		<!--click 함수 영역  -->
+		
+				
 		<!--진짜 참여를 묻는 modal  -->
-		<div class="modal fade" id="modal2">		
+		<div class="modal fade" id="modal2">				
 		<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<%@ include file="studyAlert.jsp" %>
@@ -109,15 +112,7 @@
 		</div>		
 		
 		
-	   <script>
-		$(document).on("click", "#alert",function(){
-			var study_name= $(this).val();
-			console.log("스터디 이름"+study_name);
-			$(".modal-body #name").innerHTML += study_name;
-			
-		});
-		</script>
-		
+	   
 	
 		
 </section>

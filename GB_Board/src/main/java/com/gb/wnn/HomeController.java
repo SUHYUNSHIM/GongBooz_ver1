@@ -3,6 +3,7 @@ package com.gb.wnn;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
@@ -88,24 +89,59 @@ public class HomeController {
 		
 	}
 	//스터디룸에 접속한다.
-	@RequestMapping(value="/studyRoom.do")
+	@RequestMapping(value="/studyRoom.do", method= RequestMethod.POST)
 	public String studyRoom(@ModelAttribute("studyVO") StudyVO studyVO, Model model,HttpServletRequest req) throws Exception{
-		studyService.updateStudy(studyVO); //참가한 인원수를 증가시키고
-		studyService.getStudyRoom(studyVO); //스터디룸에 접근한다.
+		
+		String study_name = req.getParameter("study_name");
+		System.out.println(study_name);
+		
+		StudyVO bb = new StudyVO();
+		bb.setStudy_name(study_name);
+		
+		studyService.updateStudy(bb);
+		StudyVO aa=studyService.getStudyRoom(studyVO);
+		
+		System.out.println(aa.getCur_number());
+		System.out.println(aa.getRegion());
+		
+		HttpSession session = req.getSession();
+		session.setAttribute("studyVO", aa);
+		
+		session.setAttribute("num", aa.getMax_number()- aa.getCur_number());
+		//session.setAttribute("region", aa.getRegion());
+		
+		
+		/*HttpSession session = req.getSession();
+		session.getAttribute("study_name");
+		System.out.println(session.getAttribute("study_name"));
+		
+		StudyVO aa=studyService.getStudyRoom(studyVO);*/
+		//StudyVO bb=studyService.updateStudy(studyVO);
+		
+		//studyService.updateStudy(studyVO); //참가한 인원수를 증가시키고
+		//studyService.getStudyRoom(studyVO); //스터디룸에 접근한다.
+		
+		
 		
 		return "studyRoom";
 	}
 	//진짜로 참여할 것인지 묻는다.
-	@RequestMapping(value="/studyAlert.do")
-	public void studyAlert(@ModelAttribute("studyVO") StudyVO studyVO, Model model,HttpServletRequest req) throws Exception{
+	@RequestMapping(value="/studyAlert.do",method= RequestMethod.POST)
+	public String studyAlert(@ModelAttribute("studyVO") StudyVO studyVO, Model model,HttpServletRequest req) throws Exception{
 		//studyService.updateStudy(studyVO);
 		HttpSession session = req.getSession();
 		
-		studyService.getStudyRoom(studyVO);
 		String study_name = req.getParameter("study_name");
-		session.setAttribute("study_name", study_name);
+		
+		StudyVO aa=studyService.getStudyRoom(studyVO);
+		
+		System.out.println("request"+study_name);
+		System.out.println("vo"+studyVO.getStudy_name());
+		
+		session.setAttribute("studyVO",aa);
+		System.out.println("session 출력 "+session.getAttribute("study_name"));
 		model.addAttribute("study_name",study_name);
-		//return "studyAll";
+		return "studyAlert";
 	}
 	
 	

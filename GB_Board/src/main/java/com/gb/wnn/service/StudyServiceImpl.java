@@ -60,7 +60,8 @@ public class StudyServiceImpl implements StudyService{
 	}
 
 	@Override
-	public StudyVO getStudyRoom(StudyVO studyVO) {		
+	public StudyVO getStudyRoom(StudyVO studyVO) {	
+		System.out.println("service impl"+studyVO.getStudy_name());
 		return studyroom.getStudyRoom(studyVO);
 	}
 	

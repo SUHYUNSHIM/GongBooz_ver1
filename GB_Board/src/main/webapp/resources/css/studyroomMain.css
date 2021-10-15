@@ -70,7 +70,7 @@ h3 {
 	text-align: center;
 }
 
-.modal-body, .modal fade .modal-dialog  {
+.modal-body, .modal fade .modal-dialog ,#name {
 	font-family: 'GmarketSansLight';
 	font-size: 16px;
 	
