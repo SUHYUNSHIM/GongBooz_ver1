@@ -24,12 +24,6 @@
 	private String region; //오프라인 장소
 	private int max_number; //인원 제한수   -->
 
-<%-- <%
-	final int ROWSIZE =4;
-	final int BLOCK = 5;
-	int pg = 1;	
-%> --%>
-	<%-- ${alist}   com.gb.wnn.vo.StudyVO@300d78ac--%>
 
 <!--검색 창  -->
 <section class="sc-search">
@@ -66,9 +60,6 @@
 
 <section class ="sc_result">
 
-		
-
-
 <!--표로 보기  -->
 	<table border="2">
 		<thead> <tr><th>이름</th> <th>태그</th><th>장소</th><th>정원</th><th>참여</th></tr></thead>
@@ -87,7 +78,7 @@
 					<b>${imsi.study_name}</b></button>
 									 
 					</div>
-					</form>
+					</form> 
 					</td>
 					<td>${imsi.study_tag }</td>
 					<td>${imsi.region }</td>
@@ -110,21 +101,13 @@
 		</div>
 		</div>
 		</div>		
-		
-		
-	   
 	
-		
 </section>
-
 
 <br></br>
 
 
 </div>
 </div>
-
-
-
 </body>
 </html>

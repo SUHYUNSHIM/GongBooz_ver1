@@ -142,8 +142,6 @@ public class HomeController {
 		System.out.println("session 출력 "+session.getAttribute("study_name"));
 		model.addAttribute("study_name",study_name);
 		return "studyAlert";
-	}
-	
-	
+	}	
 	
 }

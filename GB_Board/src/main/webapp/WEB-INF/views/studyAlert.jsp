@@ -54,6 +54,10 @@
 		<input type="hidden" value="${study_name}" name="study_name">
 		</a>
 		</form>
+		
+		<form action="studyAll.do" method="post">
+			<input type="submit" value="취소" id="plus"> 
+		</form>
 		<%-- </form>  --%>
 		
 	</div>
