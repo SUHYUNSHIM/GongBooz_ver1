@@ -92,7 +92,7 @@
 		
 		<!--click 함수 영역  -->
 		
-				
+	<%-- 			
 		<!--진짜 참여를 묻는 modal  -->
 		<div class="modal fade" id="modal2">				
 		<div class="modal-dialog" role="document">
@@ -102,7 +102,7 @@
 		</div>
 		</div>
 		</div>		
-	
+	 --%>
 </section>
 
 <br></br>
